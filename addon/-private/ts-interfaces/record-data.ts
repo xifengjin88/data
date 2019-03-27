@@ -1,4 +1,4 @@
-import { StableRecordIdentifier } from './identifier';
+import { RecordIdentifier } from './identifier';
 import { ResourceIdentifierObject } from './json-api';
 
 export interface RecordDataV1 {
@@ -33,26 +33,26 @@ export interface RecordDataV1 {
 export interface RecordDataV2 {
   version: '2';
   pushData(data: object, calculateChanges: boolean);
-  unloadRecord(identifier: StableRecordIdentifier);
-  isRecordInUse(identifier: StableRecordIdentifier);
-  getAttr(identifier: StableRecordIdentifier, propertyName: string);
-  isAttrDirty(identifier: StableRecordIdentifier, propertyName: string);
-  changedAttributes(identifier: StableRecordIdentifier);
-  hasChangedAttributes(identifier: StableRecordIdentifier);
-  rollbackAttributes(identifier: StableRecordIdentifier);
-  getRelationship(identifier: StableRecordIdentifier, propertyName: string);
-  willCommit(identifier: StableRecordIdentifier);
-  didCommit(identifier: StableRecordIdentifier, data: any);
-  commitWasRejected(identifier: StableRecordIdentifier);
-  isEmpty(identifier: StableRecordIdentifier);
-  isNew(identifier: StableRecordIdentifier);
-  clientDidCreate(identifier: StableRecordIdentifier, options: object);
-  setBelongsTo(identifier: StableRecordIdentifier, propertyName: string, value: RecordData | null);
-  removeFromInverseRelationships(identifier: StableRecordIdentifier, isNew: boolean);
-  setAttribute(identifier: StableRecordIdentifier, propertyName: string, value: any);
-  addToHasMany(identifier: StableRecordIdentifier, propertyName: string, value: RecordData[]);
-  removeFromHasMany(identifier: StableRecordIdentifier, propertyName: string, value: RecordData[]);
-  setHasMany(identifier: StableRecordIdentifier, propertyName: string, value: RecordData[]);
+  unloadRecord(identifier: RecordIdentifier);
+  isRecordInUse(identifier: RecordIdentifier);
+  getAttr(identifier: RecordIdentifier, propertyName: string);
+  isAttrDirty(identifier: RecordIdentifier, propertyName: string);
+  changedAttributes(identifier: RecordIdentifier);
+  hasChangedAttributes(identifier: RecordIdentifier);
+  rollbackAttributes(identifier: RecordIdentifier);
+  getRelationship(identifier: RecordIdentifier, propertyName: string);
+  willCommit(identifier: RecordIdentifier);
+  didCommit(identifier: RecordIdentifier, data: any);
+  commitWasRejected(identifier: RecordIdentifier);
+  isEmpty(identifier: RecordIdentifier);
+  isNew(identifier: RecordIdentifier);
+  clientDidCreate(identifier: RecordIdentifier, options: object);
+  setBelongsTo(identifier: RecordIdentifier, propertyName: string, value: RecordIdentifier | null);
+  removeFromInverseRelationships(identifier: RecordIdentifier, isNew: boolean);
+  setAttribute(identifier: RecordIdentifier, propertyName: string, value: any);
+  addToHasMany(identifier: RecordIdentifier, propertyName: string, value: RecordIdentifier[]);
+  removeFromHasMany(identifier: RecordIdentifier, propertyName: string, value: RecordIdentifier[]);
+  setHasMany(identifier: RecordIdentifier, propertyName: string, value: RecordIdentifier[]);
 }
 
 export interface EmberDataRecordData extends RecordDataV1 {
