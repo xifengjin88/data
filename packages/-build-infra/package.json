@@ -25,17 +25,23 @@
     "ember-cli-string-utils": "^1.1.0",
     "calculate-cache-key-for-tree": "^2.0.0",
     "silent-error": "^1.1.1",
-    "ember-cli-path-utils": "^1.0.0"
+    "ember-cli-path-utils": "^1.0.0",
+    "glob": "^7.1.3",
+    "mocha": "^6.1.2",
+    "mocha-only-detector": "1.0.1",
+    "rimraf": "^2.6.2",
+    "rsvp": "^4.8.4",
+    "ember-cli-version-checker": "^3.1.2",
+    "ember-cli-blueprint-test-helpers": "^0.19.1"
   },
   "bin": {
     "test-external-partner": "./bin/test-external-partner-project.js"
   },
   "devDependencies": {
-    "mocha": "*",
-    "glob": "*",
-    "mocha-only-detector": "*",
-    "rimraf": "*",
-    "rsvp": "*"
+    "broccoli-test-helper": "*",
+    "co": "*",
+    "broccoli-babel-transpiler": "*",
+    "common-tags": "*"
   },
   "engines": {
     "node": ">= 6.0.0"

@@ -1,7 +1,6 @@
 # compiled output
 /dist/
 /tmp/
-/node-tests/
 
 # misc
 /.bowerrc
@@ -14,3 +13,6 @@
 /tests/
 /yarn.lock
 .gitkeep
+
+# ember-data
+/node-tests

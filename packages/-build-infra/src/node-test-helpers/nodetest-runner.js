@@ -5,14 +5,21 @@ var RSVP = require('rsvp');
 var rimraf = require('rimraf');
 var mochaOnlyDetector = require('mocha-only-detector');
 
+var root = 'node-tests/{blueprints,acceptance,unit}';
+var _checkOnlyInTests = RSVP.denodeify(
+  mochaOnlyDetector.checkFolder.bind(null, root + '/**/*{-test}.js')
+);
+
 function addFiles(mocha, files) {
   files = typeof files === 'string' ? glob.sync(root + files) : files;
   files.forEach(mocha.addFile.bind(mocha));
 }
 
 function checkOnlyInTests() {
+  // eslint-disable-next-line no-console
   console.log('Verifing `.only` in tests');
   return _checkOnlyInTests().then(function() {
+    // eslint-disable-next-line no-console
     console.log('No `.only` found');
   });
 }
@@ -20,6 +27,7 @@ function checkOnlyInTests() {
 function runMocha(mocha) {
   mocha.run(function(failures) {
     process.on('exit', function() {
+      // eslint-disable-next-line no-process-exit
       process.exit(failures);
     });
   });
@@ -37,15 +45,12 @@ function ciVerificationStep() {
 module.exports = function runNodeTests() {
   if (/^win/.test(require('os').platform())) {
     // don't run these tests in windows right now, they don't work
+    // eslint-disable-next-line no-process-exit
     process.exit(0);
   }
 
   rimraf.sync('.node_modules-tmp');
 
-  var root = 'node-tests/{blueprints,acceptance,unit}';
-  var _checkOnlyInTests = RSVP.denodeify(
-    mochaOnlyDetector.checkFolder.bind(null, root + '/**/*{-test}.js')
-  );
   var optionOrFile = process.argv[2];
   var mocha = new Mocha({
     timeout: 5000,
@@ -68,7 +73,9 @@ module.exports = function runNodeTests() {
       runMocha(mocha);
     })
     .catch(function(error) {
+      // eslint-disable-next-line no-console
       console.error(error);
+      // eslint-disable-next-line no-process-exit
       process.exit(1);
     });
 };
