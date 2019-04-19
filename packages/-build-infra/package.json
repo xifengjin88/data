@@ -12,7 +12,8 @@
   },
   "scripts": {
     "prepublishOnly": "ember ts:precompile",
-    "postpublish": "ember ts:clean"
+    "postpublish": "ember ts:clean",
+    "test:node": "node node-tests/nodetest-runner.js"
   },
   "dependencies": {
     "babel-plugin-feature-flags": "^0.3.1",
@@ -29,7 +30,13 @@
   "bin": {
     "test-external-partner": "./bin/test-external-partner-project.js"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "mocha": "*",
+    "glob": "*",
+    "mocha-only-detector": "*",
+    "rimraf": "*",
+    "rsvp": "*"
+  },
   "engines": {
     "node": ">= 6.0.0"
   }

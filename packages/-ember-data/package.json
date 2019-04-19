@@ -13,7 +13,6 @@
     "start": "ember server",
     "test": "ember test",
     "test:all": "ember try:each",
-    "test:node": "node node-tests/nodetest-runner.js",
     "test:production": "ember test -e production",
     "test:optional-features": "ember test -e test-optional-features",
     "test:try-one": "ember try:one",

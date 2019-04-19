@@ -16,6 +16,7 @@
     "build": "ember build",
     "start": "ember serve",
     "test": "ember test",
+    "test:node": "node node-tests/nodetest-runner.js",
     "test:all": "ember try:each"
   },
   "dependencies": {

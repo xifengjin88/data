@@ -1,6 +1,7 @@
 # compiled output
 /dist/
 /tmp/
+/node-tests/
 
 # misc
 /.bowerrc
