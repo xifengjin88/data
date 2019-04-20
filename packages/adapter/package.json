@@ -1,6 +1,6 @@
 {
   "name": "@ember-data/adapter",
-  "version": "3.10.0-beta.2",
+  "version": "3.10.0-beta.3",
   "description": "The default blueprint for ember-cli addons.",
   "keywords": [
     "ember-addon"
