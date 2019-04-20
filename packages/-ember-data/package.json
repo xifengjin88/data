@@ -1,6 +1,6 @@
 {
   "name": "ember-data",
-  "version": "3.10.0-beta.3",
+  "version": "3.10.0-beta.4",
   "description": "A data layer for your Ember applications.",
   "repository": "git://github.com/emberjs/data.git",
   "directories": {
@@ -24,10 +24,10 @@
   "license": "MIT",
   "dependencies": {
     "@ember-data/-build-infra": "^3.10.0-beta.2",
-    "@ember-data/adapter": "^3.10.0-beta.3",
-    "@ember-data/model": "^3.10.0-beta.3",
-    "@ember-data/serializer": "^3.10.0-beta.3",
-    "@ember-data/store": "^3.10.0-beta.3",
+    "@ember-data/adapter": "^3.10.0-beta.4",
+    "@ember-data/model": "^3.10.0-beta.4",
+    "@ember-data/serializer": "^3.10.0-beta.4",
+    "@ember-data/store": "^3.10.0-beta.4",
     "@ember/ordered-set": "^2.0.3",
     "@glimmer/env": "^0.1.7",
     "broccoli-debug": "^0.6.5",
