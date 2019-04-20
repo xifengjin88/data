@@ -32,7 +32,7 @@ for (let i = 3; i < args.length; i++) {
     msg: chalk(
       `Executing: ${chalk.yellow('yarn workspace')} ${chalk.cyan(packageName)} ${chalk.red(
         command
-      )}\r\n`
+      )}`
     ),
   });
 }
@@ -41,7 +41,7 @@ console.log(
   chalk(
     `Executing: ${chalk.yellow(command)} for the following workspaces: ${chalk.cyan(
       packageNames.join(', ')
-    )}\r\n`
+    )}`
   )
 );
 commands.forEach(item => {
